@@ -34,12 +34,7 @@ class Ball(Turtle):
     def check(self):
         if self.ball.ycor() < -223:
             print("f")
-        elif self.ball.xcor() < -360 :
-            self.ball.setx(-360)
-            self.ball.left( (self.ball.heading() - 180) + 90)
-
-        elif self.ball.xcor() > 345:
-            head = self.ball.heading()
-            print(head)
-            self.ball.right(-190 + 2*head)
-            print(self.ball.heading())
+        elif self.ball.xcor() < -355 or self.ball.xcor() > 350:
+            angle = self.ball.heading()
+            reflect_angle = 180 - angle
+            self.ball.setheading(reflect_angle)
